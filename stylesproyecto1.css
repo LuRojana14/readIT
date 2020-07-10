@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+body{
+    font-family:'Roboto Condensed', sans-serif;
+    margin: 0;
+}
+
+
+
+.header {
+    height: 50px;
+    
+}
+
+
+
+
+
+
+.title {
+    font-family:'Montserrat', sans-serif;
+    color:red;
+    text-decoration: none;
+    padding: 10px 0 0 20px;
+    float: left;
+    font-size:x-large;
+}
+
+
+
+
+
+
+.top-nav-right{
+
+    float: right;
+}
+
+
+.linkitem {
+    display: inline;
+    padding: 15px;
+   /* background-color: rgb(221, 199, 184); */
+    text-decoration: none;    
+    color: black;   
+    float:left;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.linkitem:hover {
+    background; white;
+    color: red;
+    cursor: pointer;
+}
+
+
+
+.portada {
+    position: relative;
+    z-index: -1000;
+
+}
+
+
+.contenedor{
+    box-sizing: border-box;
+    justify-content: left;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    background-color:grey;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+
+
+
+
+.titulo_portada {
+
+    color: white;
+   background-color: grey;
+}
+   
+.texto_portada {
+
+   color: white;
+  
+}
+   
+
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 2500px;
+
+}
+
+/*ESTILO DE FORMULARIO*/
+
+.form-login {
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 140px;
+    right: 20px;
+    transform: translateX(-5%) translateY(-70%);
+    
+
+
+}
+
+
+.controls {
+    margin: 10px;
+    padding: 5px 5px;
+    font-family:'Roboto Condensed', sans-serif;
+    font-weight: bold;
+   
+}
+
+.buttons {
+    margin: 10px;
+    padding: 10px 5px;
+    font-family:'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    color:white;
+    background: grey;
+  
+    
+
+}
+
+
+
