@@ -1,0 +1,40 @@
+.header_fq{
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    
+
+
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+
+.nav li a  {
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+
+.nav li a:hover {
+    background-color:red;
+}
+
+.nav li ul  {
+   /* display: none;*/
+   position: absolute;
+   min-width: 140px;
+
+
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+

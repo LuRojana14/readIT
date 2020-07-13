@@ -24,7 +24,13 @@ body {
   padding: 10px 0 0 20px;
   float: left;
   font-size: x-large;
+  transition: font-size 2s;
 }
+
+.title:hover{
+  font-size: xx-large;
+}
+
 
 .top-nav-right {
   float: right;
@@ -69,6 +75,7 @@ body {
 .contenedor {
   background-color: grey;
   padding: 10px;
+  opacity: 90%;
   /*justify-content: left;
   position: absolute;
   top: 50%;
@@ -78,28 +85,19 @@ body {
 
 .titulo_portada {
   color: white;
+  font-size: 50px;
   /*background-color: grey;*/
 }
 
 .texto_portada {
   color: white;
+  font-size: 30px;
 }
 
-/*img {
-  display: block;
-  max-width: 100%;
-  width: 2500px;
-}*/
 
-/*ESTILO DE FORMULARIO*/
 
 .form-login {
-  /*width: 400px;
-    height: 100px;
-    position: absolute;
-    top: 140px;
-    right: 20px;
-    transform: translateX(-5%) translateY(-70%);*/
+ 
   float: right;
   padding-top: 20px;
 }
@@ -120,6 +118,111 @@ body {
   background: grey;
   cursor: pointer;
 }
+
+
+.info-container{
+  width: 100%;
+  background-color: #f2f2f2;
+  margin-top: 500px;
+ 
+ 
+
+}
+
+.info_main{
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding:30px 200px;
+
+}
+
+
+.info_main h3{
+  font-size: 40px;
+  color:gray;
+  text-align: center;
+}
+
+.info_main p {
+  padding: 20px 0;
+}
+
+.info_main a {
+ display: inline-block;
+ background: rgb(218, 218, 218) ;
+ color: grey;
+ text-decoration: none;
+ padding: 12px 20px;
+
+}
+
+footer {
+  width: 100%;
+
+}
+
+.footer_container {
+  width: 100%;
+  background: grey;
+  color: white;
+  
+}
+
+.footer_main {
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+  padding:50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  
+
+}
+
+.footer_main .footer_columna {
+  width: calc(100% /2);
+  text-align: justify;
+
+}
+
+
+.footer_main .footer_columna:nth-child(2){
+  width: calc(100% /2);
+  text-align: justify;
+  padding: 0 20px;
+
+}
+
+.footer_main .footer-columna h2 {
+  margin-bottom: 20px;
+}
+
+.footer_main .footer_columna input[type="email"] {
+  border: none;
+  width: 30%;
+  border: 1px;
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+
+}
+
+.footer_main .footer_columna input[type="submit"] {
+  border: none;
+  padding: 10px 40px;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+
 
 /*Media Queries*/
 @media (max-width: 768px) {
