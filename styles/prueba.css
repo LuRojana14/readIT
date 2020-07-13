@@ -1,0 +1,71 @@
+
+
+
+input {
+    position: absolute;
+    z-index: -1;
+  }
+  // Layout
+  
+  /* Accordion styles */
+  .tabs {
+    border-radius: 15px;
+    overflow: hidden; 
+  }
+  .tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      background: red;
+      font-weight: bold;
+      cursor: pointer;
+      /* Icon */
+      &:hover {
+        background: grey;
+      }
+      &::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all .35s;
+      }
+    }
+    &-content {
+      max-height: 0;
+      padding: 0 1em;
+      color: red;
+      background: white;
+      transition: all .35s;
+    }
+    &-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      background: red;
+      cursor: pointer;
+      &:hover {
+        background: darken(red, 10%);
+      }
+    }
+  }
+  
+  /*:checked*/
+  input:checked {
+    + .tab-label {
+      background: darken(red, 10%);
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+    ~ .tab-content {
+      max-height: 100vh;
+      padding: 1em;
+    }
+  }
+  
