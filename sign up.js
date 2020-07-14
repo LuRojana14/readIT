@@ -4,6 +4,10 @@ class Signup {
     constructor (){
     }
 
+
+
+
+
     handleEmailInput = (event) => {
         const email= event.target.value;
 
@@ -16,7 +20,9 @@ class Signup {
 
             validator.validateUniqueEmail(email);
         }
+
     }
+ 
     //gestionar cambios del input "password"
     handlePasswordInput = (event) => {
         const passwordRepeat = event.target.value;

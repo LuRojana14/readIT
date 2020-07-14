@@ -22,19 +22,26 @@
     </header>
     <section class="portada_register">
       <div class="fondo_register">
-        <div class="sign_up">
+        <div class="form-wrap">
           <h5>Sign up</h5>
-          <input  class="controls2" type="text" name="usuario" value="" placeholder="User">
-          <input class="controls2" type="mail" name="mail" value="" placeholder="e-mail">
-          <input class="controls2" type="password" name="password" value="" placeholder="Password">
-          <input class="controls2" type="password" name="confirm-password" value="" placeholder="Confirm Password">
-          <button class="buttons2" type="submit">Sign up</button>
-        </div>
+          <form class="signup-form" action="">  
+          <input  id="name" class="controls2" type="text" name="usuario" value="" placeholder="User">
+          <input  id="email" class="controls2" type="mail" name="mail" value="" placeholder="e-mail">
+          <input  id="password" class="controls2" type="password" name="password" value="" placeholder="Password">
+          <input  id="repeatPassword" class="controls2" type="password" name="confirm-password" value="" placeholder="Confirm Password">
+          <button id="signupButton" class="buttons2" type="submit">Sign up</button>
+          </form>
+          <div class="message-container">    
+          </div>
+        </div>  
 
       </div>
     </section>
    
-   
+  <script src="./../js/register.js"></script>
+  <script src="./../js/user.js"></script>
+  <script src="./../js/database.js"></script>
+  <script src="./../js/validator.js"></script>
 
   </body>
 
