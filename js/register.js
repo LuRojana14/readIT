@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 class Signup{
     constructor (){
         this.nameInput = document.querySelector("#name");
@@ -14,9 +16,20 @@ class Signup{
     // gerstionar cambios del input email
     handdleEmailInput = (event)=> {
         const email= event.target.value;
-
-        console.log('email', email);
         // validar el texto del input email
+        validator.validateValidEmail(email);
+
+        const errors = validator.getErrors();
+        if (!errors.invalidEmailError){
+            validator.validateUniqueEmail(email);
+
+        }
+        // mostrar los errores si los hay
+        this.setErrorMessages();
+
+        this.checkButton();
+
+
     }
     
     
@@ -24,19 +37,36 @@ class Signup{
     //gestionar cambios del password
     handlePasswordInput = (event) => {
         const password= event.target.value;
+        const passwordRepeat= this.repeatPasswordInput.value;
 
-        console.log('password', password);
+       
         // validar el texto del input password
+        validator.validatePassword(password);
+        validator.validatePasswordRepeat(password, passwordRepeat);
+        // mostrar los errores si los hay
+        this.setErrorMessages();
+
+        this.checkButton();
+
     }
+
     
     
     
     //gestionar cambios del repeat password
     handleRepeatPasswordInput = (event) => {
-        const repeatPassword= event.target.value;
+        const passwordRepeat= event.target.value;
+        const password= this.passwordInput.value; 
 
-        console.log('email',repeatPassword);
+
+     
         // validar el texto del input email
+        validator.validatePassword(password);
+        validator.validatePasswordRepeat(password, passwordRepeat);
+         // mostrar los errores si los hay
+         this.setErrorMessages();
+         this.checkButton();
+
     }
     
     
@@ -68,6 +98,12 @@ class Signup{
        this.passwordInput.value = "";
        this.repeatPasswordInput.value = "";
 
+       this.showSuccessMessage();
+       this.removeMessages();
+
+       validator.resetValidator();
+       this.buttonInput.disabled = true;
+
 
 
      }
@@ -84,6 +120,76 @@ class Signup{
          this.repeatPasswordInput.addEventListener("input", this.handleRepeatPasswordInput);
 
          this.signupButton.addEventListener("click", this.saveData);
+
+     }
+
+
+     showSuccessMessage = () => {
+        // vacia los errores para que no se sumen
+        this.errorsWrapper.innerHTML = "";
+    
+        const errorsObj = validator.getErrors();
+        // convertir el objeto a un array de strings
+        const errorsStringsArr = Object.values(errorsObj);
+    
+        if (errorsStringsArr.length > 1) {
+          return;
+        }
+    
+        const successMessageP = document.createElement('p');
+        successMessageP.innerHTML = "La cuenta ha sido creada con exito";
+    
+        this.errorsWrapper.appendChild(successMessageP);
+    
+      }
+    
+      
+      // activar o desactivar el botón de envio (Sign Up)
+      checkButton = () => {
+        const errorsObj = validator.getErrors();
+        const errorsArr = Object.values(errorsObj);
+        
+    
+        if(errorsArr.length > 0) {
+          this.buttonInput.disabled = true;
+        }
+        else {
+          this.buttonInput.disabled = false;
+        }
+      }
+    
+      removeMessages = () => {
+        setTimeout( () => {
+          this.errorsWrapper.innerHTML = "";
+        }, 2000)
+      }
+
+
+    
+
+
+
+
+
+     setErrorMessages = () => {
+         //vacia los errores para que no se sumen
+         this.errorsWrapper.innerHTML="";
+
+         const errorsObj= validator.getErrors();
+
+         //convertir el objeto a un array
+         const errorsStringsArr= Object.values(errorsObj);
+         
+
+         errorsStringsArr.forEach( (errorStr)=> {
+           const errorMessageP =  document.createElement('p')
+           errorMessageP.innerHTML=errorStr;
+
+           this.errorsWrapper.appendChild(errorMessageP);
+
+
+         })
+
 
      }
 

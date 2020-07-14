@@ -19,7 +19,7 @@
            <a class= "linkitem" href="./registration.html">register</a>
            <a class= "linkitem" href="./collection.html">collection</a>
            <coleection class="html"></coleection></a>
-           <a class= "linkitem" href="#">about us</a>
+           <a class= "linkitem" href="./fq.html">about us</a>
           </div>    
         </nav>  
     </header>
@@ -27,12 +27,16 @@
     <section class="portada">
      <div class="portada_img">
 
-       <div class="form-login">
-         <input  class="controls" type="text" name="usuario" value="" placeholder="User">
-         <input class="controls" type="password" name="password" value="" placeholder="Password">
-         <!--<input class="buttons" type="submit" name="" value="Log in">-->
-         <button type="submit" class="buttons">Log in</button>
-       </div>
+       <section class="form-login">
+         <form class="login-form" action="">
+           <input  id="email" type="email"  placeholder="E-mail">
+           <input id="password" type="password" name="password" value="" placeholder="Password">
+           <!--<input class="buttons" type="submit" name="" value="Log in">-->
+           <button type="submit" class="buttons" id="login-button">Log in</button>
+        </form>
+        <div class="message-container">   
+        </div>
+       </section>
 
        <div class="portada-wrapper">
         <div class="contenedor">
@@ -92,6 +96,8 @@
       </div>
 
     </footer>
+    <script src="./../js/login.js"></script>
+    <script src="./../js/database.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

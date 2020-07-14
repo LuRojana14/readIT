@@ -85,7 +85,7 @@ body {
 
 .titulo_portada {
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   /*background-color: grey;*/
 }
 
@@ -100,6 +100,8 @@ body {
  
   float: right;
   padding-top: 20px;
+  
+  
 }
 
 .controls {
@@ -107,6 +109,7 @@ body {
   padding: 5px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
+
 }
 
 .buttons {

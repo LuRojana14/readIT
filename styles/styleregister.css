@@ -34,7 +34,6 @@
 .linkitem {
     
     padding: 15px;
-   /* background-color: rgb(221, 199, 184); */
     text-decoration: none;    
     color: black;   
     float: left;
@@ -50,23 +49,6 @@
 
 
 
-/*.portada_register{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    background: grey;
-    margin:auto;
-    margin-top: 180px;
-    padding: 20px 30px;
-    border-top: 4px;
-    color: white;
-    box-sizing: border-box;
-    text-align: center;
-
-}*/
 
 .portada_register{
    position: relative;
@@ -90,8 +72,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    background: grey;
+    height: 600px;
+    background-color: gray;
     margin:auto;
     margin-top: 180px;
     padding: 20px 30px;
@@ -99,6 +81,8 @@
     color: white;
     box-sizing: border-box;
     text-align: center;
+    
+  
 
 }
 
