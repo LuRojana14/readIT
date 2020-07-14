@@ -218,6 +218,15 @@ footer {
 
 }
 
+.resultado{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.cardlu{
+  width: 100px;
+}
 
 
 

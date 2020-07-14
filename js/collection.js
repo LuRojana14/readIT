@@ -3,11 +3,11 @@ const divResultado = document.querySelector('.resultado');
 
 //Escucho permanentemente el formulario-buscar y cuando escucha un submit (click al boton buscar)
 // dispara un evento
-formBuscar.addEventListener('submit', (e) => {
+formBuscar.addEventListener('submit', async (e) => {
     //obtener datos del formulario:
     const searchInputValue = document.querySelector('.book-search').value;
     //llama a la funcion consultar api 
-    const resultado = consultarAPI(searchInputValue);
+    const resultado = await consultarAPI(searchInputValue);
     imprimirResultados(resultado);
 })
 
@@ -19,32 +19,40 @@ const consultarAPI = async (palabra) => {
     
     const respuestaAPI = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${palabra}`)
 
-    // Convertimos respuestaAPI a un objeto JSON y lo guardamos en la variable respuestaJSON
+    // Convierto respuestaAPI a un objeto JSON y lo guardo en la variable respuestaJSON
     const respuestaJSON = await respuestaAPI.json();
 
     console.log('respuesta 2:', respuestaJSON.items);
-    return {
-        respuestaJSON
-    }
+    return respuestaJSON
+    
 };
 
 
 const imprimirResultados = (resultado) => {
     console.log('entra a imprimir resultados:', resultado)
-    divResultado.innerHTML = '<h1> Holaaaaaa </h1>';
+    
 
-   const listaLibros = respuesta.items;
+   const listaLibros = resultado.items;
     console.log('lista', listaLibros);
+    divResultado.innerHTML=""
     listaLibros.forEach(libro => {
-    divResultado.innerHTML += `
-        <div class="card" style="width: 18rem;">
-            <img src="${libro.volumeInfo.imageLinks.thumbnail}" class="card-img-top">
+    const newDiv= document.createElement("div")
+    let thumbnail= ""//foto
+    if (libro.volumeInfo.imageLinks){
+        thumbnail=libro.volumeInfo.imageLinks.thumbnail
+    }
+    
+    newDiv.innerHTML += `
+        <div class="card cardlu" style="width: 18rem;">
+            <img src="${thumbnail}" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">${libro.volumeInfo.title}</h5>
                 <p class="card-text">${libro.volumeInfo.title}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div> `;
+
+        divResultado.appendChild(newDiv)
     });
     
 }
