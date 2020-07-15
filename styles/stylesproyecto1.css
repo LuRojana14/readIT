@@ -11,6 +11,8 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
+  width: 100%;
+  text-align: center;
 }
 
 .header {
@@ -37,13 +39,14 @@ body {
 }
 
 .linkitem {
- /* display: inline;*/
-  /* background-color: rgb(221, 199, 184); */
+  
   text-decoration: none;
   color: black;
   float: left;
   text-align: center;
   padding: 14px 16px;
+  font-weight:bold ;
+  font-family: "Roboto Condensed", sans-serif;;
 }
 
 .linkitem:hover {
@@ -76,17 +79,13 @@ body {
   background-color: grey;
   padding: 10px;
   opacity: 90%;
-  /*justify-content: left;
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  transform: translateX(-50%) translateY(-50%);*/
+ 
 }
 
 .titulo_portada {
   color: white;
   font-size: 40px;
-  /*background-color: grey;*/
+ 
 }
 
 .texto_portada {

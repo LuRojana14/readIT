@@ -1,0 +1,87 @@
+.formulario-buscar {
+  
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: center;
+ margin-top: 150px;
+ justify-content: space-around;
+ max-width: 900px;
+
+
+}
+
+
+
+
+
+.book-search{
+    width: 250px;
+    
+}
+
+label{
+    color: red;
+    font-weight: bold;
+}
+
+label:hover{
+    color: gray;
+}
+
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.form-group2{
+   width: 250px;
+}
+
+.buscar-boton{
+    width: 100px;
+   height: 30px;
+   border-radius: 5px;
+   border-width: 1px;
+   background-color:gray;
+}
+
+.book-search{
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+  
+}
+
+.categories-list{
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.resultado{
+
+}
+
+
+/*Media Queries*/
+@media (max-width: 768px) {
+    .formulario-buscar{
+      float: none;
+      text-align: center;
+      font-size: small;
+    }
+
+    .book-search{
+        float: none;
+      text-align: center;
+      font-size: small;
+       
+       
+      }
+    
+  }
+  

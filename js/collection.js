@@ -1,15 +1,6 @@
 const formBuscar =  document.querySelector('.formulario-buscar'); 
 const divResultado = document.querySelector('.resultado');
 
-//Escucho permanentemente el formulario-buscar y cuando escucha un submit (click al boton buscar)
-// dispara un evento
-formBuscar.addEventListener('submit', async (e) => {
-    //obtener datos del formulario:
-    const searchInputValue = document.querySelector('.book-search').value;
-    //llama a la funcion consultar api 
-    const resultado = await consultarAPI(searchInputValue);
-    imprimirResultados(resultado);
-})
 
 
 // Creo una funcion pasando el termino de busqueda como parametro
@@ -21,19 +12,55 @@ const consultarAPI = async (palabra) => {
 
     // Convierto respuestaAPI a un objeto JSON y lo guardo en la variable respuestaJSON
     const respuestaJSON = await respuestaAPI.json();
-
-    console.log('respuesta 2:', respuestaJSON.items);
     return respuestaJSON
     
 };
 
+// Consultar por categorias a la API
+const consultarCategoria = async (category) => {
+    
+    const respuestaCategorias = await fetch(`http://openlibrary.org/subjects/${category}.json`);
+
+    // Resperar la respuesta de las categorias y devolver un JSON
+    const categorias = await respuestaCategorias.json();
+
+    // devolvemos el resultado
+    return {
+         categorias
+    }
+};
+
+const getCategories = async () => {
+    
+    const categoriasResponse = await fetch('https://www.etnassoft.com/api/v1/get/?get_categories=all');
+    const categoriasLista = await categoriasResponse.json();
+
+    return {
+        categoriasLista
+    }
+    
+}
+
+
+
+// Imprimir categorias en menu seleccionable https://openlibrary.org/subjects
+const imprimirCategorias = async () => {
+    // definir categorias
+    const categories = await getCategories();
+    // seleccionar el select de categorias
+    const selectCategoria = document.querySelector('.categories-list');
+
+    // Recorremos el arreglo e imprimimos los <option>
+    for(i = 0; i < categories.categoriasLista.length; i++){
+        const option = document.createElement('option'); // Creo un elemento html <option></option> y lo guardo en la variable option
+        option.value = categories.categoriasLista[i].name; // Asigno al elemento html <option value="Arts"></option>
+        option.appendChild(document.createTextNode(option.value)); // Agrego dentro de cada nodo el texto correspondiente: <option value="Arts">Arts</option>
+        selectCategoria.appendChild(option); //Pongo en el select grande cada nodo con la categoria
+    }
+}
 
 const imprimirResultados = (resultado) => {
-    console.log('entra a imprimir resultados:', resultado)
-    
-
    const listaLibros = resultado.items;
-    console.log('lista', listaLibros);
     divResultado.innerHTML=""
     listaLibros.forEach(libro => {
     const newDiv= document.createElement("div")
@@ -41,7 +68,7 @@ const imprimirResultados = (resultado) => {
     if (libro.volumeInfo.imageLinks){
         thumbnail=libro.volumeInfo.imageLinks.thumbnail
     }
-    
+
     newDiv.innerHTML += `
         <div class="card cardlu" style="width: 18rem;">
             <img src="${thumbnail}" class="card-img-top">
@@ -56,3 +83,27 @@ const imprimirResultados = (resultado) => {
     });
     
 }
+
+
+// Mostrar categorias en el select
+imprimirCategorias();
+
+//Escucho permanentemente el formulario-buscar y cuando escucha un submit (click al boton buscar)
+// dispara un evento
+formBuscar.addEventListener('submit', async (e) => {
+
+    // leer el select
+    const categorias = document.querySelector('.categories-list');
+    const categoriaSeleccionada = categorias.options[categorias.selectedIndex].value; 
+
+    //obtener datos del formulario:
+    const searchInputValue = document.querySelector('.book-search').value;
+
+    //llama a la funcion consultar api 
+    //const resultado = await consultarCategoria(categoriaSeleccionada);
+    
+    const resultado = await consultarAPI(searchInputValue);
+    
+
+    imprimirResultados(resultado);
+})
