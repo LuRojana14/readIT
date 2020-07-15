@@ -83,3 +83,18 @@
     opacity: 60%;
   
   } 
+
+
+  /*Media Queries*/
+@media (max-width: 768px) {
+  .faq {
+    float: none;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    
+   
+  }
+  
+  
+}

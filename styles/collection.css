@@ -46,7 +46,7 @@ label:hover{
    height: 30px;
    border-radius: 5px;
    border-width: 1px;
-   background-color:gray;
+   background-color: #f2f2f2;
 }
 
 .book-search{
@@ -63,6 +63,9 @@ label:hover{
 }
 
 .resultado{
+    margin-top: 70px;
+    justify-content: center;
+    justify-content: space-around;
 
 }
 

@@ -90,20 +90,26 @@ imprimirCategorias();
 
 //Escucho permanentemente el formulario-buscar y cuando escucha un submit (click al boton buscar)
 // dispara un evento
+
+
+const searchInputValue = document.querySelector('.book-search');
+
 formBuscar.addEventListener('submit', async (e) => {
 
     // leer el select
     const categorias = document.querySelector('.categories-list');
-    const categoriaSeleccionada = categorias.options[categorias.selectedIndex].value; 
+   // const categoriaSeleccionada = categorias.options[categorias.selectedIndex].value; 
 
     //obtener datos del formulario:
-    const searchInputValue = document.querySelector('.book-search').value;
+    
+    console.log(searchInputValue.value);
 
     //llama a la funcion consultar api 
     //const resultado = await consultarCategoria(categoriaSeleccionada);
     
-    const resultado = await consultarAPI(searchInputValue);
+    const resultado = await consultarAPI(searchInputValue.value);
     
 
     imprimirResultados(resultado);
 })
+
