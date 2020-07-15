@@ -59,7 +59,7 @@ body {
 }
 
 .portada {
- /* position: relative;*/
+  position: relative;
   /*z-index: -1000;*/
 }
 
@@ -99,8 +99,12 @@ body {
 .login-form{
   float: right;
 }
+
 .form-login {
-  padding-top: 20px;
+ 
+  
+  padding: 20px;
+  
 }
 
 
