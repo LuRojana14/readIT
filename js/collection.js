@@ -113,3 +113,12 @@ formBuscar.addEventListener('submit', async (e) => {
     imprimirResultados(resultado);
 })
 
+
+const carousel= document.querySelector('.carousel-slide');
+
+// primero tendria que pasar mi thumbnail a array
+
+
+function generateRandomBook() {
+    return Math.floor(Math.random()*(thumbnail)).toString(16);
+  }
