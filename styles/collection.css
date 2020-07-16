@@ -100,3 +100,30 @@ label:hover{
     
   }
   
+
+  @media (max-width: 375px) {
+
+    .formulario-buscar {
+  
+        display: flex;
+        flex-wrap: wrap;
+       justify-content: left;
+       margin-top: 70px;
+       width: 300px;
+       
+      
+      }
+
+      .buscar-boton{
+          width: 80px;
+         height: 30px;
+         border-radius: 5px;
+         border-width: 1px;
+         margin: 0  auto;
+    
+      }
+   
+    
+  
+  }
+  

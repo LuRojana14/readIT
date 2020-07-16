@@ -98,3 +98,37 @@
   
   
 }
+
+@media (max-width: 375px) {
+  .faq {
+    float: none;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    align-content: center;
+    
+  }
+
+ 
+   
+   .faq input[type='checkbox']:not(:checked) + label {
+    display: block;
+    transition:  0.8s;
+    height: 35px;
+    
+  }
+  
+  .fondo_faq{
+    height: 600px;
+    opacity: 60%;
+  
+  } 
+
+  .faq-heading {
+    font-size: 16px;
+  }
+  
+  
+
+
+}

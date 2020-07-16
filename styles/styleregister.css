@@ -84,8 +84,6 @@
     text-align: center;
     opacity: 90%;
     
-    
-  
 
 }
 
@@ -125,7 +123,20 @@
 }
 
 @media (max-width: 375px) {
+
+    .fondo_register{
+      
+        width: 100%;
+        height: 700px;
+        opacity: 70%;
+
+    }
     
+    .form-wrap{
+        width: 300px;
+        display: flex;
+        height: 400px;
+    }
 
 
 }
