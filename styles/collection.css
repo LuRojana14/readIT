@@ -59,13 +59,17 @@ label:hover{
 .categories-list{
     height: 30px;
     border-radius: 5px;
-    border-width: 1px;
+   
+  
 }
 
 .resultado{
     margin-top: 70px;
     justify-content: center;
     justify-content: space-around;
+    height: 50px;
+    
+    
 
 }
 
