@@ -252,26 +252,6 @@ footer {
   margin-bottom: 20px;
 }
 
-.footer_main .footer_columna input[type="email"] {
-  border: none;
-  width: 30%;
-  border: 1px;
-  height: 30px;
-  padding: 10px;
-  font-size: 14px;
-
-}
-
-.footer_main .footer_columna input[type="submit"] {
-  border: none;
-  padding: 10px 40px;
-  font-size: 14px;
-  margin-top: 10px;
-  cursor: pointer;
-
-}
-
-
 
 
 
