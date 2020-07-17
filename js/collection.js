@@ -99,8 +99,9 @@ const imprimirResultados = (resultado) => {
    }
    
     divResultado.innerHTML="";
+    const newDiv= document.querySelector(".resultado")
     listaLibros.forEach(libro => {
-        const newDiv= document.createElement("div")
+        
         let thumbnail= "";//foto
         if (libro.thumbnail){
             thumbnail=libro.thumbnail;
@@ -116,7 +117,7 @@ const imprimirResultados = (resultado) => {
                 </div>
             </div> `;
 
-        divResultado.appendChild(newDiv);
+        
     });
     
 }
