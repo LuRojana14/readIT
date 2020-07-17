@@ -18,6 +18,11 @@ body {
 
 .header {
   height: 50px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  top:0;
 }
 
 .title {
@@ -59,6 +64,7 @@ body {
 
 .portada {
   position: relative;
+  margin-top: 50px;
   /*z-index: -1000;*/
 }
 

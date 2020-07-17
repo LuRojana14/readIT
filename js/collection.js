@@ -15,7 +15,7 @@ const inicio = async () => {
 
 // Creo una funcion pasando el termino de busqueda como parametro
 const consultarPorKeyword= async (keyword) => {
-    // con await fetch espero la respuesta de la api  https://www.googleapis.com/books/v1/volumes?q= pasandole
+    // con await fetch espero la respuesta de la api  https://www.googleapis.com/books/v1/volumes?q= (ESTA API ES LA VIEJA) pasandole
     // palabra que sería mi termino de busqueda. Y esto se guarda en una variable que llamo respuestaAPI
     
     const respuestaAPI = await fetch(`https://www.etnassoft.com/api/v1/get/?keyword=${keyword}`);
@@ -53,7 +53,7 @@ const getCategories = async () => {
     }
     
 }
-
+//CREO una variable con todas las listas vacias pra que las elimine
 const emptyArray= ["Arte - Bellas Artes"]
 
 // Imprimir categorias en menu seleccionable https://openlibrary.org/subjects
